@@ -37,4 +37,5 @@ int main()
     }
   }
   cout<<"\nThe root of the given function is "<<x<<endl;
+  return 0;
  }
