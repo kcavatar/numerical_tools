@@ -19,6 +19,7 @@ int main()
     float a, b;
     cin>>a>>b;
     float gaussP[n][2];
+   
     //Second column represents Gauss points
     //First column represents their corresponding weights
     if(n==1)
@@ -37,12 +38,15 @@ int main()
       gaussP[0][1] = sqrt(3/5.0); gaussP[1][1] = -sqrt(3/5.0);
     }
 
+    //Gauss integration
     float val = 0.0;
     for(int i=0;i<n;i++)
     {
         float x = a + (b-a)*0.5*(gaussP[i][1] + 1);
         val = val + 0.5*(b-a)*gaussP[i][0]*func_val(x);
     }
+    
+    //Display results
     cout<<"\n\n"<<setw(40)<<"\t\t****************************************"<<endl;
     cout<<setw(40)<<"The result is: "<<val<<endl;
     cout<<"\n"<<setw(40)<<"\t\t****************************************"<<endl;
